@@ -1,0 +1,7 @@
+#jenkins
+/jenkins/jenkins_home/
+
+#nginx
+/nginx/html/
+/nginx/logs/
+

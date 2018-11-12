@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  nginx:
+    image: nginx:1.15.6
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - $PWD/nginx.conf:/etc/nginx/nginx.conf #nginx默认配置
+      - $PWD/conf.d:/etc/nginx/conf.d         #nginx扩展配置目录
+      - $PWD/logs:/var/log/nginx              #nginx日志
+      - $PWD/html:/etc/nginx/html/            #nginx静态页面
