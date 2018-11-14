@@ -12,4 +12,4 @@ services:
       - $PWD/logs:/var/log/nginx              #nginx日志
       - $PWD/html:/etc/nginx/html/            #nginx静态页面
     extra_hosts:
-      - JENKINS_HOST:192.168.1.103            #hosts文件增加jenkins地址
+      - JENKINS_HOST:192.168.1.113            #hosts文件增加jenkins地址
