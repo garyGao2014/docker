@@ -1,0 +1,94 @@
+version: '3.4'
+services:
+  ssserver-3308:
+    image: 
+      'mritd/shadowsocks:latest'
+    container_name: 
+      ssserver-3308
+    environment:
+      - SS_MODULE=ss-server
+      - SS_CONFIG=-s 0.0.0.0 -p 3308 -m aes-256-cfb -k 330895163194120 --fast-open
+      - KCP_FLAG=true
+      - KCP_MODULE=kcpserver
+      - KCP_CONFIG=-t 127.0.0.1:3308 -l :6500 -mode fast2
+      - RNGD_FLAG=true
+    restart: 
+      always
+    ports:
+      - '3308:3308'
+      - '6500:6500/udp'
+
+  ssserver-3309:
+    image: 
+      'mritd/shadowsocks:latest'
+    container_name: 
+      ssserver-3309
+    environment:
+      - SS_MODULE=ss-server
+      - SS_CONFIG=-s 0.0.0.0 -p 3309 -m aes-256-cfb -k 330995163194120 --fast-open
+      - KCP_FLAG=true
+      - KCP_MODULE=kcpclient
+      - KCP_CONFIG=-t 127.0.0.1:6500 -l :6500 -mode fast2
+      - RNGD_FLAG=true
+    restart: 
+      always
+    ports:
+      - '3309:3309'
+
+  ssserver-3310:
+    image: 
+      'mritd/shadowsocks:latest'
+    container_name: 
+      ssserver-3310
+    environment:
+      - SS_MODULE=ss-server
+      - SS_CONFIG=-s 0.0.0.0 -p 3310 -m aes-256-cfb -k 331095163194120 --fast-open
+      - KCP_FLAG=true
+      - KCP_MODULE=kcpclient
+      - KCP_CONFIG=-t 127.0.0.1:6500 -l :6500 -mode fast2
+      - RNGD_FLAG=true
+    restart: 
+      always
+    ports:
+      - '3310:3310'
+
+  ssserver-3311:
+    image: 
+      'mritd/shadowsocks:latest'
+    container_name: 
+      ssserver-3311
+    environment:
+      - SS_MODULE=ss-server
+      - SS_CONFIG=-s 0.0.0.0 -p 3311 -m aes-256-cfb -k 331195163194120 --fast-open
+      - KCP_FLAG=true
+      - KCP_MODULE=kcpclient
+      - KCP_CONFIG=-t 127.0.0.1:6500 -l :6500 -mode fast2
+      - RNGD_FLAG=true
+    restart: 
+      always
+    ports:
+      - '3311:3311'
+
+  ssserver-3312:
+    image: 
+      'mritd/shadowsocks:latest'
+    container_name: 
+      ssserver-3312
+    environment:
+      - SS_MODULE=ss-server
+      - SS_CONFIG=-s 0.0.0.0 -p 3312 -m aes-256-cfb -k 331295163194120 --fast-open
+      - KCP_FLAG=true
+      - KCP_MODULE=kcpclient
+      - KCP_CONFIG=-t 127.0.0.1:6500 -l :6500 -mode fast2
+      - RNGD_FLAG=true
+    restart: 
+      always
+    ports:
+      - '3312:3312'
+
+
+
+
+
+
+
