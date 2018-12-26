@@ -5,3 +5,6 @@
 /nginx/html/
 /nginx/logs/
 
+#mysql
+/mysql/data/
+
