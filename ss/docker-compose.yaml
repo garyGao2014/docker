@@ -1,26 +1,21 @@
 version: '3.4'
 services:
-  ssserver-all:
+  ssserver:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: 
-      ssserver-all
+      ssserver
     volumes:
-      - ./shadowsocks.json:/data/ss/shadowsocks.json
+      - ./shadowsocks.json:/Gcpdata/shadowsocks/shadowsocks.json
     restart: 
       always
     ports:
-      - '3308:3308'
-      - '3309:3309'
-      - '3310:3310'
-      - '3311:3311'
-      - '3312:3312'
-      - '3313:3313'
+      - '5191:5191'
     entrypoint:
       - ssserver
       - -c
-      - /data/ss/shadowsocks.json
+      - /Gcpdata/shadowsocks/shadowsocks.json
 
 
 
